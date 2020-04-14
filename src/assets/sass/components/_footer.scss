@@ -1,0 +1,15 @@
+.l-footer{
+    border-top:1px solid setColor(border);
+    width:100%;
+    height:60px;
+    background-color:setColor(secondary);
+    display:grid;
+    grid-template-rows:1fr;
+    grid-template-columns:1fr;
+}
+
+.l-footer > *{
+    display:inline-block;
+    align-self: center;
+    justify-self: end;
+}

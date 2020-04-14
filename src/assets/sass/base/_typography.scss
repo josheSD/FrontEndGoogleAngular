@@ -1,0 +1,32 @@
+@font-face{
+    font-family: Roboto;
+    src: url('../fonts/roboto/Roboto-Regular.ttf');
+}
+
+body{
+    font-family:var(--main-font), var(--main-alternate-font);
+}
+
+.title1{
+    @include font(title1);
+}
+
+.title2{
+    @include font(title2);
+}
+
+.title3{
+    @include font(title3);
+}
+
+.title4{
+    @include font(title4);
+}
+
+.base{
+    @include font(base);
+}
+
+.small{
+    @include font(small);
+}

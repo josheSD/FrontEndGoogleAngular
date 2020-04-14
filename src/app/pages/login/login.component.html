@@ -1,0 +1,37 @@
+<div class="lo-card">
+    <div class="lo-card__title">
+        <p class="base">
+            Inicia sesión para continuar a:
+            <br>
+            <b>Admin</b>
+        </p>
+    </div>
+    <div class="lo-card__content">
+
+        <form [formGroup]="formLogin" (ngSubmit)="ingresar()">
+
+            <p style="color:red;" *ngIf="mensaje.length >= 1">
+                {{ mensaje }}
+            </p>
+            
+            <input formControlName="email" type="text" name="email" id="email" class="title3" placeholder="Introducir correo" autofocus>
+            <input formControlName="password" type="password" name="password" id="password" class="title3" placeholder="Introducir contraseña">
+
+
+            <button type="submit" class="btn-session" id="btn-session">
+                <p>Iniciar sesión</p>
+            </button>
+        </form>
+    </div>
+    <hr class="interlineado">
+    <ul class="lo-card__footer title4">
+            <li>
+                <a href="#">¿No puedes iniciar sesión?</a>
+            </li>
+            <li>
+                <a [routerLink]="['/register']">Registrarse para obtener una cuenta</a>
+            </li>
+    </ul>
+</div>
+
+

@@ -1,0 +1,67 @@
+// Custom Properties
+:root{
+    // Variables de apilamiento (z-index)
+    --z-back: -10;
+    --z-intermedio:5;
+    --z-normal: 10;
+    --z-tooltip: 20;
+    --z-fixed: 30;
+    --z-modal: 40;
+
+    // Otras variables
+    --font-size:16px;                  // -> base
+    --main-font:'Roboto';
+    --main-alternate-font: sans-serif;
+}
+
+
+//Colores
+$colores: (
+    primary: #F3EDFF,
+    secondary: #FFFFFF,
+    button: rgb(0, 82, 204),
+    accent: #333339,
+    parrafo: #686868,
+    warning:#ffbb00,
+    success:#5DB75B,
+    danger:#D15454,
+    enlace:#788D9F,
+    border:#DDDDDD
+);
+
+// Pensando Movil First    =>  16:9  tiene  (1366 * 768)  - (1920 * 1080) - (1600 * 900)
+$breakpoints:(
+    small:0px,
+    medium:425px,
+    large:992px,
+    xlarge:1440px
+);
+
+// Typography       base = parrafo
+$fonts:(
+    title1: 25px 35px,
+    title2: 18px 25px,
+    title3: 14px 30px,
+    title4: 13px 24px,
+    base: 14px 24px,
+    small: 12px 22px
+);
+
+//Auth Layout
+$card_width:400px;
+
+//Admin Layout
+$sidebar:260px;
+$sidebar_hover:80px;
+
+//Configuration Fixed
+$configuration_height:48px;
+$configuration_width:64px;
+
+$dropdown_height:305px;
+$dropdown_width:290px;
+
+$caret_width:4px;
+$caret_margin:$caret_width * 2;
+
+

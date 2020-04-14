@@ -1,0 +1,31 @@
+@import 'config/mixins',
+        'config/functions',
+        'config/vars';
+
+@import 'base/base',
+        'base/typography';
+
+@import 'plugins/perfect-scrollbar',
+        'plugins/pe-icon',
+        'plugins/jquery.jvectormap';
+
+@import 'layouts/admin',
+        'layouts/auth';
+
+@import 'components/login',
+        'components/register',
+        'components/navbar',
+        'components/sidebar',
+        'components/footer',
+        'components/configuration-fixed',
+        'components/breadcrumb',
+        'components/dashboard';
+
+@import 'utilities/tablet',
+        'utilities/dropdown',
+        'utilities/message',
+        'utilities/buttons',
+        'utilities/card';
+
+
+

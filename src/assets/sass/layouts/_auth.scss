@@ -1,0 +1,115 @@
+.l-auth{
+    display: grid;
+    grid-template-rows:100%;
+    grid-template-columns:1fr;
+    justify-items: center;
+
+    @include mediaquery(702px){
+        grid-template-columns:1fr $card_width 1fr;
+    }
+
+    &__left,
+    &__right{
+        display:none;
+        @include mediaquery(702px){
+            display:block;
+            position:relative;
+            width:100%;
+            height:100%;
+        }
+    }
+
+    &__content{
+        width:100%;
+
+        & img{
+            width:50.5px;
+            margin-right:10px;
+        }
+    }
+}
+
+.l-content-title{
+    width:100%;
+    height:75px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    @include mediaquery(702px){
+        height:124px;
+    }
+}
+
+.l-content-footer{
+    width:100%;
+    height:42px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:15px;
+    margin-bottom:25px;
+
+    & li{
+        text-align: center;
+    }
+
+    & a{
+        color:setColor(button);
+        font-size: 14px;
+    }
+
+    & li:nth-child(1){
+        list-style: none;
+        margin-right:30px;
+    }
+
+    & li:nth-child(2):before{
+        content:'';
+        margin-left:8px;
+    }
+
+    & li:nth-child(2)::marker{
+        font-size: 12px;
+        text-align: center;
+        color: rgb(107, 119, 140);
+    }
+}
+
+
+.auth-img{
+    &__left{
+        @include mediaquery(702px){
+            position:fixed;
+            z-index:var(--z-normal);
+            bottom:0;
+            left:0;
+            width:calc((100vw/2) - (#{$card_width}/1.7));
+        }
+
+        @include mediaquery(1024px){
+            width:calc((100vw/2) - (#{$card_width}/1.3));
+        }
+
+        @include mediaquery(xlarge){
+            width:calc((100vw/2) - (#{$card_width}/0.9));
+        }
+    }
+    &__right{
+        @include mediaquery(702px){
+            position:fixed;
+            z-index:var(--z-normal);
+            bottom:0;
+            right:0;
+            width:calc((100vw/2) - (#{$card_width}/1.7));
+        }
+        @include mediaquery(1024px){
+            width:calc((100vw/2) - (#{$card_width}/1.3));
+        }
+
+        @include mediaquery(xlarge){
+            width:calc((100vw/2) - (#{$card_width}/0.9));
+        }
+    }
+}
+

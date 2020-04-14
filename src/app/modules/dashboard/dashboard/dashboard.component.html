@@ -1,0 +1,162 @@
+<button (click)="logout()">Salir de la aplicación</button>
+<br>
+<br>
+
+<div *ngIf="idRole === 3">
+
+    <h4>
+        Solicitudes de Carga
+    </h4>
+    <br>
+
+    <table border="1">
+        <tr>
+            <td>id</td>
+            <td>usuario</td>
+            <td>contenido</td>
+            <td>dimension</td>
+            <td>
+                Ruta
+            </td>
+            <td>
+                Accion
+            </td>
+        </tr>
+        <tr *ngFor="let package of packages">
+            <td>{{ package.id }}</td>
+            <td>{{ package.usuarioNombre }}</td>
+            <td>{{ package.contenido }}</td>
+            <td>{{ package.dimension }}</td>
+            <td>
+                <button (click)="verRuta(package)" style="cursor:pointer">
+                    Ver Cargo
+                </button>
+            </td>
+            <td>
+                <div *ngIf="package.status == 1">
+                    Ya ha sido entregado
+                </div>
+
+                <div *ngIf="package.status == 0">
+                    <button (click)="guardarPaquete(package)" style="cursor:pointer">
+                        Obtener Paquete
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+    <div style="margin:30px ">
+
+        <agm-map 
+            [latitude]="lat" 
+            [longitude]="lng"
+            [zoom]="zoom"
+            style="height:520px;width:100%"
+        >
+
+            <div *ngIf="mapaShowEmployee">
+                <agm-direction [origin]="originEmployee" [destination]="destinationEmployee">
+                </agm-direction>
+            </div>
+            
+        </agm-map>
+
+    </div>
+
+</div>
+
+<div *ngIf="idRole === 2">
+
+    <table border="1">
+        <tr>
+            <td>id</td>
+            <td>contenido</td>
+            <td>dimension</td>
+            <td>
+                Ver
+            </td>
+        </tr>
+        <tr *ngFor="let package of packagesEmployees">
+            <td>{{ package.id }}</td>
+            <td>{{ package.contenido }}</td>
+            <td>{{ package.dimension }}</td>
+            <td>
+                <div style="color: green" *ngIf="package.status == 1">
+                    Ya esta en camino tu paquete
+                </div>
+
+                <div *ngIf="package.status == 0">
+                    Paquete Creado
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+    <p style="color:green">
+        {{ mensaje }}
+    </p>
+    <br><br>
+    <span>Paquete Contenido: </span>
+    <input type="text" 
+        [formControl]="contenido"
+        style="width: 400px; height: 24px; margin-left:10px;"
+        >
+    <br>
+    <br>
+    <span>Paquete Dimension: </span>
+    <input type="text" 
+        [formControl]="dimension"
+        style="width: 400px; height: 24px; margin-left:10px;"
+        >
+    <br>
+    <br>
+    <span>Punto de Partida: </span>
+    <input type="text" 
+        #startpoint 
+        [formControl]="startPoint"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="off"
+        style="width: 400px; height: 24px; margin-left:10px;"
+        >
+    <br><br><br>
+    <span>Punto de Llegada: </span>
+    <input type="text" 
+        #endpoint 
+        [formControl]="endPoint"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="off"
+        style="width: 400px; height: 24px; margin-left:10px;"
+        >
+    <br>
+    <br>
+        <button (click)="calcularDistancia()">
+            Guardar Paquete
+        </button>
+
+        
+
+    <div style="margin:30px ">
+
+        <agm-map 
+            [latitude]="lat" 
+            [longitude]="lng"
+            [zoom]="zoom"
+            style="height:520px;width:100%"
+        >
+            <div *ngIf="mapaShow">
+                <agm-direction [origin]="origin" [destination]="destination">
+                </agm-direction>
+            </div>
+        </agm-map>
+
+    </div>
+
+
+</div>

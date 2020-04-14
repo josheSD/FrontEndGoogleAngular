@@ -1,0 +1,13 @@
+.lo-card{
+    &__content {
+        & input[name="password_confirmation"]{
+            margin-bottom: 25px;
+        }
+    }
+
+    & .password_register[type='password'] {
+        margin-bottom: 10px;
+    }
+}
+
+

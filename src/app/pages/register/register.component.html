@@ -1,0 +1,43 @@
+<div class="lo-card">
+    <div class="lo-card__title">
+        <p class="base">
+            <b>Registro</b>
+        </p>
+    </div>
+    <div class="lo-card__content">
+
+        <form [formGroup]="formRegister" (ngSubmit)="registrarUsuario()">
+            <p class="text-danger" style="color:red;" *ngIf="formRegister.errors?.sonIguales && !formRegister.pristine">
+                Las contraseñas deben de ser iguales
+            </p>
+
+            <p *ngIf="mensaje.length >= 1" style="color:darkcyan">
+                {{ mensaje }}
+            </p>
+
+            <input formControlName="name" type="text" class="title3" name="name" id="name" placeholder="Nombre" autofocus>
+            <input formControlName="email" type="email" class="title3" name="email" id="email" placeholder="Correo">
+            <input formControlName="phone" type="text" class="title3" name="telefono" id="telefono" placeholder="Telefono">
+            <input 
+                  #search
+                  formControlName="direction" 
+                  type="text" class="title3"
+                  id="direccion" 
+                  placeholder="Dirección"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="off"
+                  >
+            <input formControlName="password" type="password" class="title3" name="password" id="password" class="password_register" placeholder="Contraseña">
+            <input formControlName="repeatpassword" type="password" class="title3" name="password_confirmation" id="password-confirm" placeholder="Confirmar Contraseña">
+            <button type="submit"  class="btn-session" id="btn-session">
+                <p>Registrar</p>
+            </button>
+            <a [routerLink]="['/login']" style="width:100%; display:inline-block; height:40px; text-align:center; background:white; color:blue; border: 1px solid blue; padding-top:10px;">
+                Volver
+            </a>
+        </form>
+
+    </div>
+</div>
+

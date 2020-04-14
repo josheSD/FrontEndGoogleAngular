@@ -1,0 +1,20 @@
+@mixin mediaquery($bp){
+    @if map-has-key($breakpoints,$bp){
+        @media screen and (min-width: map-get($breakpoints,$bp)){
+            @content;
+        }
+    }@else{
+        @media screen and (min-width: $bp){
+            @content;
+        }
+    }
+}
+
+@mixin font($size){
+    font-size:nth(map-get($fonts,$size),1);
+    line-height: nth(map-get($fonts,$size),2);
+}
+
+@mixin line-gradient($colores,$setColor){
+    background: $setColor;
+}

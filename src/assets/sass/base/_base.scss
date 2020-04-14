@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+*:hover,
+*:active,
+*:focus{
+    outline: none;
+}
+
+html{
+    font-size: var(--font-size);
+}
+
+img{
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+}

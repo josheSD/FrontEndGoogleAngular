@@ -1,0 +1,127 @@
+.navbar-main{
+    height:65px;
+    width:100%;
+    background-color:setColor(secondary);
+    border-bottom: 1px solid setColor(border);
+    display:grid;
+    grid-template-rows:1fr;
+    grid-template-columns:1fr 1fr;
+    align-items: center;
+    justify-items: end;
+
+    &__movil{
+        display:block;
+        justify-self: start;
+        @include mediaquery(large){
+            display:none;
+        }
+    }
+
+    &__table{
+        display:none;
+        justify-self: start;
+        @include mediaquery(large){
+            display:block;
+        }
+    }
+
+    & img{
+        width:38px;
+        cursor:pointer;
+    }
+}
+
+.button-primary{
+    border-radius:50%;
+    background-color:setColor(accent);
+    width:38px;
+    height:38px;
+    border:none;
+    outline: 0;
+    cursor:pointer;
+    & i{
+        color:setColor(secondary);
+        font-size:22.5px;
+    }
+}
+
+#minimizeSidebar i{
+    padding-top:4px;
+}
+
+#minimizeSidebar .pe-7s-more{
+    transform: rotate(90deg);
+    padding-top: 0px;
+    padding-left: 4px;
+}
+
+//Hamburguer
+.hamburger__box{
+    @include mediaquery(small){
+        width: 30px;
+        height: 20px;
+        display: inline-block;
+        position: relative;
+        cursor:pointer;
+    }
+}
+
+.hamburger__inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger__inner,
+.hamburger__inner::before,
+.hamburger__inner::after {
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+.hamburger__inner::before, .hamburger__inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger__inner::before {
+    top: -10px;
+
+}
+
+.hamburger__inner::after {
+    bottom: -10px;
+}
+
+.hamburger--slider .hamburger__inner {
+    top: 2px;
+}
+
+.hamburger--slider .hamburger__inner::before {
+    top: 8px;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+}
+.hamburger--slider .hamburger__inner::after {
+    top: 16px;
+}
+
+.hamburger--slider.is-active .hamburger__inner {
+    transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--slider.is-active .hamburger__inner::before {
+    transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+    opacity: 0;
+}
+
+.hamburger--slider.is-active .hamburger__inner::after {
+    transform: translate3d(0, -16px, 0) rotate(-90deg);
+}
+

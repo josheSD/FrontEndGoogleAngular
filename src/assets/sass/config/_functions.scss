@@ -1,0 +1,7 @@
+@function setColor($getColor){
+    @if map-has-key($colores,$getColor){
+        @return map-get($colores,$getColor);
+    }
+    @warn "No Existe ninguna propiedad con ese color => #{$getColor} ?";
+    @return null;
+};

@@ -1,0 +1,28 @@
+.ux-button{
+    display:block;
+    color:white;
+    border-radius:3px;
+    width:95%;
+    padding:5px 0px;
+    margin:0 auto;
+    border:none;
+    cursor:pointer;
+    text-align:center;
+
+    &:hover.btn-primary{
+        background: rgba(0, 82, 204,.8);
+    }
+
+    &.btn-primary{
+        background-color:setColor(button);
+    }
+    &.btn-secondary{
+        background-color:setColor(success);
+    }
+    &.btn-warning{
+        background-color:setColor(warning);
+    }
+    &.btn-danger{
+        background-color:setColor(danger);
+    }
+}
